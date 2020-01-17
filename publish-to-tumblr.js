@@ -11,7 +11,7 @@ const getCaptionFromImage = (image) => {
 const image = process.argv[2]
 const caption = getCaptionFromImage(image)
 
-tumblr.createPhotoPost("hamish-macbeth", {
+tumblr.createPhotoPost("hamishmacbeth.tumblr.com", {
     caption: caption,
     data: image,
 }, (err, resp) => {
