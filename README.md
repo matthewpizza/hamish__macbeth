@@ -21,3 +21,9 @@ Every 2 hours for now
 ```
 20 */2 * * * ./random-frame.sh
 ```
+
+## Dependencies
+
+```bash
+brew install coreutils ffmpeg
+```
