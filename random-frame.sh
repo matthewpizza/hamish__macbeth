@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+pushd `dirname $0` > /dev/null
+    __dirname=`pwd`
+popd > /dev/null
+
 # Pizza Party
 corpus="Hamish Macbeth"
 # pizza party
@@ -8,13 +12,13 @@ downstairs_corpus=$(tr "[:upper:]" "[:lower:]" <<< $corpus)
 sanitized_corpus=${downstairs_corpus// /-}
 
 # 01. Hamish Macbeth-A Perfectly Simple Explanation-S2.avi
-random_episode=$(ls "$corpus" | shuf -n 1)
+random_episode=$(ls "$__dirname/$corpus" | shuf -n 1)
 # 01
 episode_number=$(printf %02d ${random_episode:0:2})
 # 02
 season_number=$(printf %02d ${random_episode:(-5):1})
 
-input_filename="$corpus/$random_episode"
+input_filename="$__dirname/$corpus/$random_episode"
 
 # Vaguely the opening/closing credits duration
 first_frame=45
@@ -41,11 +45,14 @@ padded_frame=$(printf %04d $random_frame)
 
 output_filename="$sanitized_corpus-$season_number-$episode_number-$padded_frame.jpg"
 
+echo $input_filename
+echo $output_filename
+
 ffmpeg \
     -i "$input_filename" \
     -ss $random_frame \
     -vframes 1 \
     -loglevel quiet \
-    $output_filename
+    "$__dirname/$output_filename"
 
-./publish.js $output_filename
+node $__dirname/publish.js $output_filename

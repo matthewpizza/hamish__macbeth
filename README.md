@@ -19,7 +19,7 @@ Inspired by [kothscreens](https://twitter.com/kothscreens)
 Every 2 hours for now
 
 ```
-20 */2 * * * ./random-frame.sh
+20 */2 * * * export PATH=/usr/local/bin:$PATH && bash /full/ass/path/hamish__macbeth/random-frame.sh >>/var/log/cron.log 2>&1
 ```
 
 ## Dependencies

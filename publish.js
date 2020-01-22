@@ -12,7 +12,7 @@ const getCaptionFromImage = (image) => {
 
 const image = process.argv[2]
 const caption = getCaptionFromImage(image)
-const data = Buffer.from(readFileSync(image)).toString("base64")
+const data = Buffer.from(readFileSync(`${__dirname}/${image}`)).toString("base64")
 
 twitter.post("media/upload", { media_data: data }, (err, data, resp) => {
     if (err) {
