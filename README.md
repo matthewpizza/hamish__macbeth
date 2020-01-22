@@ -13,3 +13,11 @@ Inspired by [kothscreens](https://twitter.com/kothscreens)
 
 * [Acorn TV](https://acorn.tv/hamishmacbeth/)
 * [Amazon](https://www.amazon.com/gp/video/detail/B07VWS3T7M/ref=cm_sw_tw_r_pv_wb_Vyx16JI2EAK8s)
+
+## crontab
+
+Every 2 hours for now
+
+```
+20 */2 * * * ./random-frame.sh
+```
