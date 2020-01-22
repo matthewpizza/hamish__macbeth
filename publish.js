@@ -7,7 +7,7 @@ const twitter = new require("twit")(credentials.twitter)
 
 const getCaptionFromImage = (image) => {
     const parts = image.split("-")
-    return `s${parts[2]} e${parts[3]}`
+    return `S${parts[2]}E${parts[3]}`
 }
 
 const image = process.argv[2]
