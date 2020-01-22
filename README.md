@@ -14,16 +14,22 @@ Inspired by [kothscreens](https://twitter.com/kothscreens)
 * [Acorn TV](https://acorn.tv/hamishmacbeth/)
 * [Amazon](https://www.amazon.com/gp/video/detail/B07VWS3T7M/ref=cm_sw_tw_r_pv_wb_Vyx16JI2EAK8s)
 
-## crontab
+## Install
+
+```bash
+npm ci
+```
+
+### crontab
 
 Every 2 hours for now
 
 ```
-20 */2 * * * export PATH=/usr/local/bin:$PATH && bash /full/ass/path/hamish__macbeth/random-frame.sh >>/var/log/cron.log 2>&1
+20 */2 * * * export PATH=/usr/local/bin:$PATH && bash /full/ass/path/hamish__macbeth/random-frame.sh >> /tmp/cron.log 2>&1
 ```
 
-## Dependencies
+### Dependencies
 
 ```bash
-brew install coreutils ffmpeg
+brew install coreutils ffmpeg node
 ```
