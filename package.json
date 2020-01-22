@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "tumblr.js": "^2.0.2"
+    "tumblr.js": "^2.0.2",
+    "twit": "^2.2.11"
   }
 }
