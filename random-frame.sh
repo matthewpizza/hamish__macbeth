@@ -41,13 +41,11 @@ padded_frame=$(printf %04d $random_frame)
 
 output_filename="$sanitized_corpus-$season_number-$episode_number-$padded_frame.jpg"
 
-echo "frame : $padded_frame"
-echo "input : $input_filename"
-echo "output: $output_filename"
-
 ffmpeg \
     -i "$input_filename" \
     -ss $random_frame \
     -vframes 1 \
     -loglevel quiet \
     $output_filename
+
+./publish.js $output_filename
