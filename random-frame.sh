@@ -14,7 +14,9 @@ sanitized_corpus=${downstairs_corpus// /-}
 # 01. Hamish Macbeth-A Perfectly Simple Explanation-S2.avi
 random_episode=$(ls "$__dirname/$corpus" | shuf -n 1)
 # 01
-episode_number=$(printf %02d ${random_episode:0:2})
+episode_number=${random_episode:0:2}
+# https://stackoverflow.com/a/8078505
+episode_number=$(printf %02d "${episode_number#0}")
 # 02
 season_number=$(printf %02d ${random_episode:(-5):1})
 
