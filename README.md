@@ -25,7 +25,7 @@ npm ci
 Every 2 hours for now
 
 ```
-20 */2 * * * export PATH=/usr/local/bin:$PATH && bash /full/ass/path/hamish__macbeth/random-frame.sh >> /tmp/cron.log 2>&1
+20 */2 * * * export PATH=/usr/local/bin:$PATH && node /full/ass/path/hamish__macbeth/random-frame.js >> /tmp/cron.log 2>&1
 ```
 
 ### Dependencies
